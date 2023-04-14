@@ -1,0 +1,20 @@
+.card{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%;
+    min-height: 10rem;
+min-width: 20rem;
+padding: 20px;
+border-radius: 2rem;
+
+background-image: white;
+will-change:contents;
+}
+
+.template-container{
+    margin-left: 5%;
+    margin-right: 5%;
+}

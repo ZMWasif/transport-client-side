@@ -1,0 +1,23 @@
+.service{
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.service:hover{
+    transform: translateY(-10px);
+}
+
+
+
+.service-btn{
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: black;
+    padding: 10px;
+    background-image: linear-gradient(#661AE6 , #7e34ff );
+}
+.service-btn:hover{
+    background-image: linear-gradient(#8541fa, #995fff);
+    border-color: black;
+}
