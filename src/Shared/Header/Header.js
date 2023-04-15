@@ -8,7 +8,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase.init";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWarehouse, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import {
+  faWarehouse,
+  faSignOut,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
@@ -22,17 +26,17 @@ const Header = () => {
             <Navbar.Brand as={Link} to="/">
               <img className="logo" src={logo} height={45} alt="" />
             </Navbar.Brand>
-            <Navbar.Brand className="pages" href="home">
+            <Navbar.Brand className="pages" href="/home">
               Transport
             </Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link className="pages" href="home">
+              <Nav.Link className="pages" href="/home">
                 Home
               </Nav.Link>
-              <Nav.Link className="pages" href="features">
+              <Nav.Link className="pages" href="/features">
                 Features
               </Nav.Link>
-              <Nav.Link className="pages" href="services">
+              <Nav.Link className="pages" href="/services">
                 Services
               </Nav.Link>
             </Nav>
@@ -40,8 +44,8 @@ const Header = () => {
           <div className="flex-none text-white mx-auto">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle">
-                <div className="indicator text-white">
-                  <FontAwesomeIcon icon={faWarehouse} bounce />
+                <div className="text-white">
+                  <FontAwesomeIcon icon={faWarehouse} />
                 </div>
               </label>
               <div className="dropdown dropdown-end">
@@ -84,7 +88,7 @@ const Header = () => {
                     className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
                   >
                     <li>
-                      <a className="justify-between">Profile</a>
+                      <a className="justify-between">{user.displayName}</a>
                     </li>
                     <li>
                       <a>Settings</a>
@@ -100,7 +104,10 @@ const Header = () => {
                       ></FontAwesomeIcon>
                     </button>
                   </ul>
-                  <Button> {user.displayName}</Button>
+
+                  <Button>
+                    <FontAwesomeIcon icon={faUser} />
+                  </Button>
                 </div>
               ) : (
                 /* {<ul

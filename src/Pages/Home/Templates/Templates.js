@@ -4,12 +4,18 @@ import "swiper/css";
 import "./Templates.css";
 import { Autoplay } from "swiper";
 import banners from "../../../Photos/template-images";
-import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Templates = () => {
   return (
     <div className="h-screen text-black flex items-center justify-center template-container">
-      <div className="max-w-5xl">
+      <div className="max-w-6xl">
+        <h1>
+          <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
+          How We Work?
+          <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
+        </h1>
         <Swiper
           spaceBetween={50}
           slidesPerView={3}

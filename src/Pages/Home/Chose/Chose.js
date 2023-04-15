@@ -4,13 +4,19 @@ import React from "react";
 import photo from "../../../Images/templates/template3.jpg";
 import { Accordion } from "react-bootstrap";
 import "./Chose.css";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Chose = () => {
   return (
     <div>
       <div>
         <div className="text-center">
-          <h1>Why Choose Us?</h1>
+          <h1>
+            {" "}
+            <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
+            Why Choose Us?
+            <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
+          </h1>
           <div className="">
             <Accordion defaultActiveKey="0" flush>
               <Accordion.Item eventKey="0">

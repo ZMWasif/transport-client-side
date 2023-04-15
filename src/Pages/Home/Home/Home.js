@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <img className="cover" src={cover} alt="" />
       <br />
-      <h2>Unbeatable Trucking and Trasportation Services</h2>
+      <h2 className="mt-5">Unbeatable Trucking and Trasportation Services</h2>
       <button className="btn btn-outline btn-primary">Learn More</button>
       <Templates></Templates>
 
