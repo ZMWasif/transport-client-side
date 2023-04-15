@@ -78,7 +78,32 @@ const Header = () => {
             </div>
             <div className="dropdown dropdown-end">
               {user ? (
-                <ul
+                <div className="dropdown dropdown-end">
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
+                  >
+                    <li>
+                      <a className="justify-between">Profile</a>
+                    </li>
+                    <li>
+                      <a>Settings</a>
+                    </li>
+                    <button
+                      className="btn btn-primary btn-block signout-btn"
+                      onClick={handleSignOut}
+                    >
+                      Sign Out
+                      <FontAwesomeIcon
+                        className="mx-2"
+                        icon={faSignOut}
+                      ></FontAwesomeIcon>
+                    </button>
+                  </ul>
+                  <Button> {user.displayName}</Button>
+                </div>
+              ) : (
+                /* {<ul
                   tabIndex={0}
                   className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
                 >
@@ -94,8 +119,7 @@ const Header = () => {
                   <li>
                     <a>Logout</a>
                   </li>
-                </ul>
-              ) : (
+                </ul>} */
                 <Nav.Link className="pages" as={Link} to="/login">
                   Login
                 </Nav.Link>
