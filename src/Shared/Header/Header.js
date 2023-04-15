@@ -1,12 +1,19 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import wasif from "../../Images/wasif.jpg";
 import { Link } from "react-router-dom";
 import logo from "../../Images/logo.jpg";
 import "./Header.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+import auth from "../../firebase.init";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWarehouse } from "@fortawesome/free-solid-svg-icons";
+import { faWarehouse, faSignOut } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div className="bg-base">
       <div className="navbar bg-dark-100">
@@ -70,28 +77,34 @@ const Header = () => {
               </div> */}
             </div>
             <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              {user ? (
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
+                >
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>Settings</a>
+                  </li>
+                  <li>
+                    <a>Logout</a>
+                  </li>
+                </ul>
+              ) : (
+                <Nav.Link className="pages" as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              )}
+              {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={wasif} />
                 </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
-              >
-                <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
-                </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
-                </li>
-              </ul>
+              </label> */}
             </div>
           </div>
         </Navbar>
