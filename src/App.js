@@ -13,6 +13,7 @@ import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Proceed from "./Pages/Home/Proceed/Proceed";
 import ManageServices from "./Pages/ManageServices/ManageServices";
 import AddService from "./Pages/Home/AddService/AddService";
+import Blogs from "./Pages/Home/Blogs/Blogs";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/features" element={<Features></Features>}></Route>
+        <Route path="/blogs" element={<Blogs> </Blogs>}></Route>
         <Route path="/services" element={<SERVICES></SERVICES>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
@@ -51,6 +52,14 @@ function App() {
           element={
             <RequiredAuth>
               <ManageServices></ManageServices>
+            </RequiredAuth>
+          }
+        ></Route>
+        <Route
+          path="/features"
+          element={
+            <RequiredAuth>
+              <Features></Features>
             </RequiredAuth>
           }
         ></Route>

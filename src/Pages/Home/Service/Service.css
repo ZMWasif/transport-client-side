@@ -2,6 +2,7 @@
     width: 100%;
     padding-bottom: 10px;
     text-align: center;
+    box-shadow: 10px 10px 5px lightgrey;
 }
 
 .service:hover{
@@ -10,14 +11,44 @@
 
 
 
-.service-btn{
-    border: 2px solid;
+.service-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #661AE6;
+    width: 180px;
+    height: 50px;
     border-radius: 5px;
     border-color: black;
-    padding: 10px;
+    padding: auto;
     background-image: linear-gradient(#661AE6 , #7e34ff );
+    z-index: 1;
+    overflow: hidden;
 }
-.service-btn:hover{
+
+
+.service-btn :nth-child(2){
+    background: transparent;
+    color: #8541fa;
+}
+
+.service-btn ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FF0099;
+    z-index: -1;
+    transition: .5s;
+}
+
+.service-btn :hover::before{
+    width: 100%;
+}
+/* .service-btn:hover{
     background-image: linear-gradient(#8541fa, #995fff);
     border-color: black;
-}
+} */

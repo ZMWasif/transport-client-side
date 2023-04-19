@@ -11,7 +11,7 @@ const Templates = () => {
   return (
     <div className="h-screen text-black flex items-center justify-center template-container">
       <div className="max-w-6xl">
-        <h1>
+        <h1 className="font-mono fw-bold">
           <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
           How We Work?
           <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />

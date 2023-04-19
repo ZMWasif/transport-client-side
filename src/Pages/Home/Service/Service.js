@@ -13,8 +13,8 @@ const Service = ({ service }) => {
   };
 
   return (
-    <div className="service">
-      <img className="service" src={img} alt="" />
+    <div className="service mb-5">
+      <img className="pb-3" src={img} alt="" />
       <button
         onClick={() => navigateToserviceDetail(_id)}
         className="service-btn text-white"

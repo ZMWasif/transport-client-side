@@ -33,12 +33,19 @@ const Header = () => {
               <Nav.Link className="pages" href="/home">
                 Home
               </Nav.Link>
-              <Nav.Link className="pages" href="/features">
-                Features
+              <Nav.Link className="pages" href="/blogs">
+                Blogs
               </Nav.Link>
               <Nav.Link className="pages" href="/services">
                 Services
               </Nav.Link>
+              {user && (
+                <>
+                  <Nav.Link as={Link} to="/features">
+                    Features
+                  </Nav.Link>
+                </>
+              )}
             </Nav>
           </Container>
           <div className="flex-none text-white mx-auto">
@@ -72,21 +79,6 @@ const Header = () => {
                   </button>
                 </ul>
               </div>
-
-              {/* <div
-                tabIndex={0}
-                className="mt-3 p-5 card card-compact dropdown-content w-52 bg-base-100 shadow"
-              >
-                <div className="card-body">
-                  <span className="font-bold text-lg text-black">8 Items</span>
-                  <span className="text-info">Subtotal: $999</span>
-                  <div className="card-actions">
-                    <button className="btn btn-primary btn-block">
-                      View Inventory
-                    </button>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="dropdown dropdown-end">
               {user ? (
@@ -118,32 +110,10 @@ const Header = () => {
                   </Button>
                 </div>
               ) : (
-                /* {<ul
-                  tabIndex={0}
-                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
-                >
-                  <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                  <li>
-                    <a>Logout</a>
-                  </li>
-                </ul>} */
                 <Nav.Link className="pages" as={Link} to="/login">
                   Login
                 </Nav.Link>
               )}
-              {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={wasif} />
-                </div>
-              </label> */}
             </div>
           </div>
         </Navbar>

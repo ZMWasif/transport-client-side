@@ -14,7 +14,7 @@ const Services = () => {
   }, []);
   return (
     <div className="services-title">
-      <h1>
+      <h1 className="font-mono fw-bold">
         <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />
         Our Services
         <FontAwesomeIcon className="mx-3" icon={faChevronDown} beatFade />

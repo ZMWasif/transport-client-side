@@ -11,8 +11,12 @@ const Home = () => {
     <div>
       <img className="cover" src={cover} alt="" />
       <br />
-      <h2 className="mt-5">Unbeatable Trucking and Trasportation Services</h2>
-      <button className="btn btn-outline btn-primary">Learn More</button>
+      <h2 className="mt-5 font-mono fw-bold">
+        Unbeatable Trucking and Trasportation Services
+      </h2>
+      <button className="btn btn-outline btn-primary text-white">
+        Learn More
+      </button>
       <Templates></Templates>
 
       <Services></Services>

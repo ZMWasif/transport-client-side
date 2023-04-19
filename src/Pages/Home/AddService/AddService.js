@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import "./AddService.css";
 
 const AddService = () => {
   const { register, handleSubmit } = useForm();
@@ -19,8 +20,8 @@ const AddService = () => {
       });
   };
   return (
-    <div className="w-50 mx-auto mt-5 mb-5">
-      <h2>Please Add a Demo</h2>
+    <div className="w-50 mx-auto mt-5 mb-5 add-container">
+      <h2>Please Add a Service</h2>
       <form
         className="d-flex flex-column mt-5"
         onSubmit={handleSubmit(onSubmit)}
@@ -42,7 +43,7 @@ const AddService = () => {
           {...register("img")}
         />
 
-        <input className="btn btn-primary" type="submit" value="Add Demo" />
+        <input className="btn btn-primary" type="submit" value="Add Service" />
       </form>
     </div>
   );
