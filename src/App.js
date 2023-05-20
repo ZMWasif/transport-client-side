@@ -14,6 +14,7 @@ import Proceed from "./Pages/Home/Proceed/Proceed";
 import ManageServices from "./Pages/ManageServices/ManageServices";
 import AddService from "./Pages/Home/AddService/AddService";
 import Blogs from "./Pages/Home/Blogs/Blogs";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -27,9 +28,14 @@ function App() {
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Register></Register>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
         <Route
           path="/services/:serviceId"
-          element={<ServiceDetail></ServiceDetail>}
+          element={
+            <RequiredAuth>
+              <ServiceDetail></ServiceDetail>
+            </RequiredAuth>
+          }
         ></Route>
         <Route
           path="/proceed/:serviceId"

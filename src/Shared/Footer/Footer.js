@@ -80,7 +80,7 @@ export default function App() {
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/services" className="text-reset">
                   <FontAwesomeIcon icon={faShare} />
                   <span className="mx-2">Our Services</span>
                 </a>
@@ -102,7 +102,7 @@ export default function App() {
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/manage" className="text-reset">
                   <FontAwesomeIcon icon={faShare} />
                   <span className="mx-2">Orders</span>
                 </a>

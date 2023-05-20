@@ -6,7 +6,7 @@ const AddService = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/services`;
+    const url = `https://hidden-bastion-31828.herokuapp.com/services`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -21,7 +21,7 @@ const AddService = () => {
   };
   return (
     <div className="w-50 mx-auto mt-5 mb-5 add-container">
-      <h2>Please Add a Service</h2>
+      <h2 className="font-mono fw-bold">Please Add a Service</h2>
       <form
         className="d-flex flex-column mt-5"
         onSubmit={handleSubmit(onSubmit)}
